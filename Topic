@@ -1,1 +1,12 @@
 
+1. Zoo Management System:
+
+Consists of animals, workers, and visitors
+There are different types of animals and workers
+Animals: fishes, birds, mammals
+Group of tortoise = creep
+Group of penguin = colony
+Workers: feeders, trainers, performers, giftshop employee
+Different types of environment for the animal to live in: dessert, aquarium, forest, jungle
+Feeding time, performance time and types
+Gift shop
