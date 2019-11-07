@@ -1,0 +1,25 @@
+public class Feeder extends Staff {
+    private boolean feedingCompleted;
+
+    public Feeder() {
+        super();
+    }
+
+    public Feeder(boolean finished) {
+
+        feedingCompleted = finished;
+    }
+
+    public void feed(Animals s, int numberToFeed) {
+
+    }
+
+    public boolean isFeedingCompleted() {
+        return feedingCompleted;
+    }
+
+    public void setFeedingCompleted(boolean newStatus) {
+        feedingCompleted = newStatus;
+
+    }
+}
