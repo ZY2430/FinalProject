@@ -1,0 +1,54 @@
+This a general class
+Class like feeder, trainer, performer extends this class
+
+public class Staff {
+
+    private String name;
+    private int id;
+    private int salary;
+    private String gender;
+    // private String email;
+
+    public Staff() {
+
+    }
+
+    public Staff(String theName, int theID, int theSalary, String gender) {
+        name = theName;
+        id = theID;
+        salary = theSalary;
+        this.gender = gender;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getID() {
+        return this.id;
+    }
+
+    public String getGender() {
+        return this.gender;
+    }
+
+    public int getSalary() {
+        return this.salary;
+    }
+
+
+    public void setName(String newName) {
+        name = newName;
+    }
+
+
+    public void setID(int newID) {
+        id = newID;
+    }
+
+    public void setSalary(int newSalary) {
+        salary = newSalary;
+    }
+
+
+}
