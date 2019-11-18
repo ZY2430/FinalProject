@@ -1,9 +1,12 @@
-package ZooMainPage;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 
 public class ZooMainPage {
@@ -33,6 +36,14 @@ public class ZooMainPage {
 		initialize();
 	}
 
+	
+	class employeeActionListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent event) {
+			Worker workerPage= new Worker();
+			workerPage.main(null);
+		}
+	}
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -49,6 +60,8 @@ public class ZooMainPage {
 		
 		JButton btnEmployee = new JButton("EMPLOYEE");
 		btnEmployee.setBounds(33, 95, 117, 29);
+		ActionListener listener = new employeeActionListener();
+		btnEmployee.addActionListener(listener);
 		frame.getContentPane().add(btnEmployee);
 	}
 
