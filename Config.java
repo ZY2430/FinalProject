@@ -3,16 +3,11 @@ package wuzi;
 import java.awt.Dimension;
 
 public interface Config {  
-	public static int MARGIN=30;//边距 
-	 public static int GRID_SPAN=35;//网格间距 
-    int ROWS = 15;  
+	public static int MARGIN=30;//The value of the marginal distance
+	 public static int GRID_SPAN=35;//the value of the sepparation distance between griddings
+    int ROWS = 15;  // number of rows
       
-    int COLS = 15;  
+    int COLS = 15;  // number of rows
       
-
-//    public static Dimension getPreferredSize(){
-//		return null; 
-//    	  
-//    	 } 
-      
+  
 }  
