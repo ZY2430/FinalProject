@@ -25,3 +25,54 @@ public class Point implements Serializable{
   return color; 
  } 
 } 
+
+
+package wuzi;
+
+import java.awt.*;
+import java.io.Serializable;
+
+/**
+ * This class represents the points
+ * Author:Group 5
+ * CS 151 Final Project
+ */
+public class Point implements Serializable {
+
+    /**
+     *
+     */
+    private int x;//棋子在棋盘中的x索引值
+    private int y;//棋子在棋盘中的y索引值
+    private Color color;//颜色
+    public static int DIAMETER = 30;//直径
+
+    public Point(int x, int y, Color color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+    }
+    //得到棋子在棋盘中的x索引值
+
+    /**
+     * Get the x coordinate
+     *
+     * @return x the value of x coordinate
+     */
+    public int getX() {
+        return x;
+    }
+    //得到棋子在棋盘中的y索引值
+
+    /**
+     * @return y the
+     */
+    public int getY() {
+        return y;
+    }
+
+    //得到棋子颜色
+    public Color getColor() {
+        return color;
+    }
+}
