@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /*
- * 五子棋的主框架，程序启动类
  * This class is main frame of connect 6 game
  *It's main functions is to initialize the game
  *CS 151 final project
