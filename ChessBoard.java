@@ -75,7 +75,7 @@ public class ChessBoard extends JPanel implements MouseListener{
   chessList[chessCount++]=ch; 
   repaint();//Notify the system to repaint 
   if(isWin()){ 
-   String msg=String.format("Congratulations,% s ~ win the game", colorName); 
+   String msg=String.format("Congratulations,%s ~ win the game", colorName); 
    JOptionPane.showMessageDialog(this, msg); 
    gameOver=true;   
   } 
