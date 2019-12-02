@@ -35,7 +35,7 @@ public class ChessBoard extends JPanel implements MouseListener{
    } 
   }); 
  } 
- /*绘制*/ 
+ /*draw*/ 
  public void paintComponent(Graphics g){ 
   super.paintComponent(g);//Draw chess board 
   for(int i=0;i<=Config.ROWS;i++){//Draw horizontal lines
