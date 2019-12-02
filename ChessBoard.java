@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.MouseListener; 
 import java.awt.event.MouseMotionListener; 
 import java.awt.event.MouseEvent; 
-/*五子棋-棋盘类*/ 
+/*Connect Six*/ 
 public class ChessBoard extends JPanel implements MouseListener{ 
 
  Point[] chessList=new Point[(Config.ROWS+1)*(Config.COLS+1)];//Initialize each array element to null
@@ -63,7 +63,7 @@ public class ChessBoard extends JPanel implements MouseListener{
  public void mousePressed(MouseEvent e) {//Invoked when the mouse button is pressed on a component 
   if(gameOver)//The game is over and cannot be played 
    return ; 
-  String colorName=isBack ? "黑棋" : "白棋"; 
+  String colorName=isBack ? "Black Chessman" : "White Chessman"; 
   xIndex=(e.getX()-Config.MARGIN+Config.GRID_SPAN/2)/Config.GRID_SPAN; 
   yIndex=(e.getY()-Config.MARGIN+Config.GRID_SPAN/2)/Config.GRID_SPAN;//Convert mouse click coordinate position to grid index 
   if(xIndex<0||xIndex>Config.ROWS||yIndex<0||yIndex>Config.COLS)//Chessmen fall outside the chessboard and cannot be played
