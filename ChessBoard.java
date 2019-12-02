@@ -10,10 +10,10 @@ import java.awt.event.MouseEvent;
 public class ChessBoard extends JPanel implements MouseListener{ 
 
  Point[] chessList=new Point[(Config.ROWS+1)*(Config.COLS+1)];//Initialize each array element to null
- boolean isBack=true;//Black chessmen first by default 
+ boolean isBack=true;//Black piece first by default 
  boolean gameOver=false;//Whether the game is over 
- int chessCount;//Number of chessmen on the current board 
- int xIndex,yIndex;//The index of the current chessmen
+ int chessCount;//Number of pieces on the current board 
+ int xIndex,yIndex;//The index of the current piece
  public ChessBoard(){ 
   setBackground(Color.LIGHT_GRAY);//Set the background color to yellow 
   addMouseListener(this);//Add event listener
@@ -44,14 +44,14 @@ public class ChessBoard extends JPanel implements MouseListener{
   for(int i=0;i<=Config.COLS;i++){//Draw a straight line
    g.drawLine(Config.MARGIN+i*Config.GRID_SPAN, Config.MARGIN, Config.MARGIN+i*Config.GRID_SPAN,Config.MARGIN+Config.ROWS*Config.GRID_SPAN); 
   } 
-  /*Draw chessmen*/ 
+  /*Draw piece*/ 
   for(int i=0;i<chessCount;i++){ 
    int xPos=chessList[i].getX()*Config.GRID_SPAN+Config.MARGIN;//X-coordinates of the grid crossing 
    int yPos=chessList[i].getY()*Config.GRID_SPAN+Config.MARGIN;//Y coordinate of grid crossing 
    g.setColor(chessList[i].getColor());//Set color 
    g.fillOval(xPos-Point.DIAMETER/2, yPos-Point.DIAMETER/2, Point.DIAMETER, Point.DIAMETER); 
    if(i==chessCount-1){ 
-    g.setColor(Color.red);//Mark the last chessman in red
+    g.setColor(Color.red);//Mark the last pieces in red
     g.drawRect(xPos-Point.DIAMETER/2, yPos-Point.DIAMETER/2, Point.DIAMETER, Point.DIAMETER); 
    } 
   } 
@@ -63,12 +63,12 @@ public class ChessBoard extends JPanel implements MouseListener{
  public void mousePressed(MouseEvent e) {//Invoked when the mouse button is pressed on a component 
   if(gameOver)//The game is over and cannot be played 
    return ; 
-  String colorName=isBack ? "Black Chessman" : "White Chessman"; 
+  String colorName=isBack ? "Black Piece" : "White Piece"; 
   xIndex=(e.getX()-Config.MARGIN+Config.GRID_SPAN/2)/Config.GRID_SPAN; 
   yIndex=(e.getY()-Config.MARGIN+Config.GRID_SPAN/2)/Config.GRID_SPAN;//Convert mouse click coordinate position to grid index 
-  if(xIndex<0||xIndex>Config.ROWS||yIndex<0||yIndex>Config.COLS)//Chessmen fall outside the chessboard and cannot be played
+  if(xIndex<0||xIndex>Config.ROWS||yIndex<0||yIndex>Config.COLS)//pieces fall outside the chessboard and cannot be played
    return ; 
-  if(findChess(xIndex,yIndex))//There are already chessmen in the x and y positions.
+  if(findChess(xIndex,yIndex))//There are already pieces in the x and y positions.
    return ; 
     
   Point ch=new Point(xIndex,yIndex,isBack ? Color.black : Color.white); 
@@ -114,7 +114,7 @@ public class ChessBoard extends JPanel implements MouseListener{
    
  /*Judge which side wins the game*/ 
  private boolean isWin(){ 
-  int continueCount=1;//Number of chessmen 
+  int continueCount=1;//Number of pieces 
   for(int x=xIndex-1;x>=0;x--){//Look left 
    Color c=isBack ? Color.black : Color.white; 
    if(getChess(x,yIndex,c)!=null){ 
@@ -199,13 +199,13 @@ public class ChessBoard extends JPanel implements MouseListener{
   } 
   return null; 
  } 
- public void restartGame(){//Clear chessman 
+ public void restartGame(){//Clear all the pieces in the board
   for(int i=0;i<chessList.length;i++) 
    chessList[i]=null; 
   /*Restore game-related variables*/
   isBack=true; 
   gameOver=false;//Whether the game is over 
-  chessCount=0;//Number of chessmen on the current board
+  chessCount=0;//Number of pieces on the current board
   repaint();  
  } 
  public void goback(){ 
